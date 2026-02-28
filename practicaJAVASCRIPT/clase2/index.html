@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer programa</title>
+</head>
+<style>
+  .parpadeo {
+  animation: parpadear 1s infinite;
+}
+
+@keyframes parpadear {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.girar {
+  animation: girar 2s linear infinite;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+</style>
+<body>
+    <div id = "resultado"></div>
+
+    <script src = "script.js">
+    </script>
+    
+</body>
+</html>

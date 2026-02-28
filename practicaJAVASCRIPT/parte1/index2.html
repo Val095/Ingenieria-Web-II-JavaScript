@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro Estudiantil</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* Banner */
+.banner{
+    background: linear-gradient(to right, #004aad, #00c6ff);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 30px;
+}
+
+.logo{
+    width: 100px;
+    height: auto;
+    display: block;
+}
+
+/* Secciones */
+.seccion{
+    padding: 20px;
+    margin: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+/* Formulario */
+input{
+    padding: 8px;
+    margin: 5px;
+    width: 200px;
+}
+
+button{
+    padding: 10px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #002f6c;
+}
+
+.resultado{
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+}
+
+/* Footer */
+.footer{
+    background-color: #002f6c;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.footer a{
+    color: #00c6ff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Banner -->
+<div class="banner">
+    <img src="logo.png" class="logo" alt="Logo Escuela">
+    <h1>Escuela Tech de Videojuegos</h1>
+</div>
+
+<!-- Misión -->
+<div class="seccion">
+    <h2>Misión</h2>
+    <p>Nuestra misión es formar estudiantes apasionados por el desarrollo de videojuegos, brindándoles una base sólida en programación, diseño de juegos, arte digital y narrativa interactiva. Promovemos el pensamiento crítico, la colaboración y la creatividad para que puedan concebir experiencias lúdicas significativas, inclusivas y accesibles. Además, fomentamos la ética digital y las buenas prácticas profesionales para que los egresados contribuyan de manera responsable a la industria del entretenimiento y la educación mediante soluciones innovadoras basadas en juegos.</p>
+</div>
+
+<!-- Visión -->
+<div class="seccion">
+    <h2>Visión</h2>
+    <p>Nuestra visión es convertirnos en un referente regional y nacional en la enseñanza y producción de videojuegos, reconocidos por impulsar la investigación aplicada, la experimentación creativa y la vinculación con empresas y estudios del sector. Aspiramos a generar una comunidad educativa que transforme ideas en proyectos reales, promoviendo la diversidad, la inclusión y el uso de los videojuegos como herramienta pedagógica y de impacto social. Buscamos que nuestros egresados lideren iniciativas que integren tecnología, arte y narrativa para mejorar la cultura digital y el entretenimiento responsable.</p>
+</div>
+
+<!-- Registro -->
+<div class="seccion">
+    <h2>Registro de Estudiante</h2>
+
+    <input type="text" id="nombre" placeholder="Ingrese su nombre"><br>
+    <input type="text" id="apellido" placeholder="Ingrese su apellido"><br>
+    <input type="number" id="codigo" placeholder="Ingrese su código"><br>
+
+    <button onclick="registrar()">Registrar</button>
+
+    <div class="resultado" id="resultado"></div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <h3>Escuela Tech de Videojuegos</h3>
+    <p>📍 Dirección: Calle 123 #45-67, Ciudad Educativa</p>
+    <p>📞 Teléfono: +57 300 123 4567</p>
+    <p>📧 Email: contacto@escuelatec.com</p>
+    <p>
+        Síguenos en:
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a>
+    </p>
+    <p>© 2026 Todos los derechos reservados</p>
+</div>
+
+<script>
+function registrar(){
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let codigo = document.getElementById("codigo").value;
+
+    let estudiante = {
+        nombre: nombre,
+        apellido: apellido,
+        codigo: codigo
+    };
+
+    document.getElementById("resultado").innerHTML =
+        "El estudiante " + estudiante.nombre + " " + estudiante.apellido +
+        " ha sido registrado con el código " + estudiante.codigo;
+}
+</script>
+
+</body>
+</html>

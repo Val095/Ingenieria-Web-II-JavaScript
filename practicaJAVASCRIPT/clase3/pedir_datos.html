@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nombre, edad, direccion, telefono, email;
+
+        nombre = prompt('INGRESE SU NOMBRE...');
+        edad = prompt('INGRESE SU EDAD...');
+        direccion = prompt('INGRESE SU DIRECCION...');
+
+        telefono = prompt('INGRESE SU TELEFONO...');
+        while (telefono.length !== 10 || isNaN(telefono)) {
+            telefono = prompt('ERROR 💀 El telefono debe tener EXACTAMENTE 10 DIGITOS numericos...');
+        }
+        email = prompt('INGRESE SU EMAIL...');
+        while (!email.includes("@")) {
+            email = prompt('ERROR 💀 El email debe contener un @ ...');
+        }
+
+        document.write('Nombre : ' + nombre);
+        document.write('<br>');
+
+        document.write('Edad : ' + edad);
+        document.write('<br>');
+    
+        document.write('Direccion : ' + direccion);
+        document.write('<br>');
+
+        document.write('Telefono : ' + telefono);
+        document.write('<br>');
+
+        document.write('Email : ' + email);
+        document.write('<br>');
+        
+
+    </script>
+</body>
+</html>
