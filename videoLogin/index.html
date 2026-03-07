@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="RedBird.ico" type="image/png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+
+<div class="card" id="card">
+  <div class="logo">
+    <div class="logo-dot"></div>
+    SISTEMA SEGURO
+  </div>
+  <h1>☠️ ACCESO ☠️</h1>
+  <p class="subtitle">Ingresa tus credenciales para continuar</p>
+
+  <div class="field">
+    <label>Usuario</label>
+    <input type="text" id="username" placeholder="tu@email.com" autocomplete="off">
+  </div>
+
+  <div class="field">
+    <label>Contraseña</label>
+    <input type="password" id="password" placeholder="••••••••">
+  </div>
+
+  <div class="attempt-bar" id="attempt-bar">
+    <div class="attempt-pip" id="pip1"></div>
+    <div class="attempt-pip" id="pip2"></div>
+    <div class="attempt-pip" id="pip3"></div>
+  </div>
+
+  <div class="error-msg" id="error-msg">⚠ Credenciales incorrectas</div>
+
+  <button id="btn" onclick="handleLogin(event)">INGRESAR</button>
+</div>
+
+<!-- VIDEO OVERLAY -->
+<div id="video-overlay">
+  <div class="noise"></div>
+  <!-- Default: YouTube embed / fallback video -->
+  <video id="alert-video" autoplay loop muted playsinline>
+    <!-- Puedes cambiar este src por tu video -->
+    <source src="VideoWtf.mp4" type="video/mp4">
+  </video>
+  <div class="overlay-content">
+    <span class="alert-icon">🔒</span>
+    <div class="overlay-title">ACCESO<br>BLOQUEADO</div>
+    <div class="overlay-sub">Demasiados intentos fallidos</div>
+    <button class="close-btn" onclick="closeOverlay()">REINTENTAR</button>
+  </div>
+  <div class="countdown">INTENTO <span>3/3</span></div>
+</div>
+
+<script src = "script.js"></script>
+</body>
+</html>
