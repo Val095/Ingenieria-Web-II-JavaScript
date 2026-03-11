@@ -1,0 +1,5 @@
+#miImagen {
+    width: 300px;
+    transition: transform 0.3s ease; /* Para que el escalado sea suave */
+    cursor: pointer;
+}

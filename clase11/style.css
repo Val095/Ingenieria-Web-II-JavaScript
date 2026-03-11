@@ -1,0 +1,12 @@
+.sucess{
+    width: 250px;
+    padding: 5px;
+    background-color: rgb(0, 140, 255);
+    color: #f5f5f5;
+    border: 0;
+    outline: 0;
+    border-radius: 2px;
+    margin: 1rem auto;
+    display: block;
+    cursor: pointer;
+}

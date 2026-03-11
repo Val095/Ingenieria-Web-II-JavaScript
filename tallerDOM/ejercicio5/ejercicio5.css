@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.tarjeta {
+  border: 2px solid #000;
+  width: 180px;
+  padding: 20px;
+  text-align: center;
+}
+
+.foto {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ccc;
+  margin: 0 auto 16px auto;
+}
+
+.nombre {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.cargo {
+  font-size: 0.9rem;
+}
+
+button {
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+#miInput { 
+    padding: 10px; 
+    outline: none; 
+    transition: border 0.2s; 
+}
+
+.limite-superado { 
+    border: 2px solid red; 
+}
+.normal { 
+    border: 1px solid #ccc; 
+}
