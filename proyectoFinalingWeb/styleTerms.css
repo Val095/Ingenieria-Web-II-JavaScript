@@ -1,0 +1,263 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #0a0a0f;
+      --surface:       #111118;
+      --border:        #2a2a38;
+      --accent:        #7c7cff;
+      --accent-bright: #a0a0ff;
+      --text:          #e8e8f0;
+      --text-dim:      #b0b0c8;
+      --muted:         #6a6a88;
+      --font-display:  'Cormorant Garamond', serif;
+      --font-mono:     'DM Mono', monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-mono);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Grid de fondo */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(92,92,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92,92,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Orbe superior */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, #5c5cff, transparent); top: -200px; left: -200px; }
+    .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, #ff5c9e, transparent); bottom: 0; right: -100px; }
+
+    /* Barra superior */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: slideDown 0.5s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .topbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .topbar-logo {
+      width: 32px; height: 32px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .topbar-logo svg { width: 14px; height: 14px; stroke: var(--accent-bright); fill: none; stroke-width: 1.5; }
+    .topbar-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+
+    .btn-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-back:hover { color: var(--accent-bright); border-color: var(--accent); }
+    .btn-back svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+    /* Contenido */
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 64px 40px 100px;
+      animation: fadeIn 0.6s 0.1s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Encabezado del doc */
+    .doc-header {
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-tag {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+
+    .doc-title {
+      font-family: var(--font-display);
+      font-size: 52px;
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .doc-title em {
+      font-style: italic;
+      color: var(--accent-bright);
+    }
+
+    .doc-meta {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* Secciones */
+    .section {
+      margin-bottom: 48px;
+      padding-left: 24px;
+      border-left: 1px solid var(--border);
+      transition: border-color 0.3s;
+    }
+    .section:hover { border-left-color: var(--accent); }
+
+    .section-num {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+
+    .section p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .section ul {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+    .section ul li {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-dim);
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: rgba(124,124,255,0.06);
+      border: 1px solid rgba(124,124,255,0.2);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--text-dim);
+      letter-spacing: 0.02em;
+    }
+
+    /* Divisor decorativo */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 48px 0;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Footer del doc */
+    .doc-footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .doc-footer p { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; }
+    .doc-footer a {
+      font-size: 11px;
+      color: var(--accent-bright);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: opacity 0.2s;
+    }
+    .doc-footer a:hover { opacity: 0.7; }
+
+    @media (max-width: 600px) {
+      .page-wrap { padding: 40px 20px 80px; }
+      .doc-title { font-size: 36px; }
+      .topbar { padding: 14px 20px; }
+    }
